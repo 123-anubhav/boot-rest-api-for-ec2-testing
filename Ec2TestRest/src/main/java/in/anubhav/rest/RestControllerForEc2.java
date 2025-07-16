@@ -15,6 +15,7 @@ import in.anubhav.dto.Student;
 import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @Slf4j
@@ -49,7 +50,7 @@ public class RestControllerForEc2 {
 	}
 	
 	@PostMapping("/students")
-	public List<Student> stuAdd(Student s){
+	public List<Student> stuAdd(@RequestBody Student s){
 		logger.info("execution start post mapping at in.anubhav.rest.RestControllerForEc2.stuAdd()");
 		List<Student> li = new ArrayList<>();
 		li.add(s);
